@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>672</width>
+    <height>280</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>672</width>
+    <height>280</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>672</width>
+    <height>280</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>AES (Lapunov)</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPlainTextEdit" name="firstTextField">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>110</y>
+      <width>181</width>
+      <height>101</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="keyLine">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>181</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="maxLength">
+     <number>16</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="keyLabel">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>30</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Key:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="rememberKeyButton">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>50</y>
+      <width>101</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Remember key</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="clearAllButton">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>50</y>
+      <width>111</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Clear all</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="firstTextFieldLabel">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>90</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>First text field:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="encodeButton">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>120</y>
+      <width>111</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Encode</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="decodeButton">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>120</y>
+      <width>111</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Decode</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="secondTextFieldLabel">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>90</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Second text field:</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="secondTextField">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>110</y>
+      <width>181</width>
+      <height>101</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="keyCountLabel">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>30</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>0 / 16</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>672</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>keyLine</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>reactToKeyLength()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>125</x>
+     <y>80</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>335</x>
+     <y>139</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rememberKeyButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>rememberKey()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>300</x>
+     <y>82</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>335</x>
+     <y>139</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clearAllButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>clearAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>415</x>
+     <y>82</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>335</x>
+     <y>139</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>encodeButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>encode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>265</x>
+     <y>152</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>335</x>
+     <y>139</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>decodeButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>decode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>605</x>
+     <y>152</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>335</x>
+     <y>139</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>reactToKeyLength()</slot>
+  <slot>rememberKey()</slot>
+  <slot>clearAll()</slot>
+  <slot>encode()</slot>
+  <slot>decode()</slot>
+ </slots>
+</ui>
